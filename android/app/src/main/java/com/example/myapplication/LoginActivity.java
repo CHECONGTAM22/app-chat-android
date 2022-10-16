@@ -42,7 +42,6 @@ public class LoginActivity extends AppCompatActivity {
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 clickLogin();
             }
         });
@@ -64,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         if (hasUser==true){
             Toast.makeText(LoginActivity.this,"than cong ",Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(LoginActivity.this,test.class);
+            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
             Bundle bundle=new Bundle();
             bundle.putSerializable("objet_user",mUser);
             intent.putExtras(bundle);
@@ -81,10 +80,10 @@ public class LoginActivity extends AppCompatActivity {
                 mlistuser=response.body();
                 Log.v("list user ",mlistuser.size()+"");
             }
-
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
                 Toast.makeText(LoginActivity.this,"that bai",Toast.LENGTH_SHORT).show();
+                Log.v("list user ","that bai roi");
             }
         });
     }
