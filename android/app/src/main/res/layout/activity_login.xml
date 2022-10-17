@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:padding="16dp"
+    android:gravity="center"
     android:orientation="vertical">
     <EditText
         android:id="@+id/edt_user"
@@ -27,5 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Login" />
+    <Button
+        android:id="@+id/btSing_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Sing in" />
 
 </LinearLayout>

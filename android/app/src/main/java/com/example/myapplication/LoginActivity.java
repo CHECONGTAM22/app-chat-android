@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText edUsername;
     private EditText edPassword;
-    private Button btLogin;
+    private Button btLogin,btSinin;
     private List<User> mlistuser;
     private User mUser;
 
@@ -37,14 +37,23 @@ public class LoginActivity extends AppCompatActivity {
         edUsername=findViewById(R.id.edt_user);
         edPassword=findViewById(R.id.edt_pass);
         btLogin=findViewById(R.id.bt_login);
+        btSinin=findViewById(R.id.btSing_in);
         mlistuser =new ArrayList<>();
         getListUser();
-        btLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btLogin.setOnClickListener(this::onClick);
+    btSinin.setOnClickListener(this::onClick);
+    }
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.btSing_in:
+                Intent intent=new Intent(LoginActivity.this,Sing_In.class);
+                startActivity(intent);
+                Toast.makeText(LoginActivity.this,"click",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.bt_login:
                 clickLogin();
-            }
-        });
+                break;
+        }
     }
     private void clickLogin() {
         String stUsername = edUsername.getText().toString().trim();
